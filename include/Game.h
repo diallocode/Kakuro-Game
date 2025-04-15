@@ -11,9 +11,8 @@ class Game
 private:
     /* attribut */
     Grille grille; // Contient la grille
-    Solver s;
 public:
-    explicit Game(Solver solution, Grille g):s(solution), grille(g) {};
+    explicit Game(Grille g):grille(g) {};
 
     bool isSolutionValide() const;
     void affichage_grille() const;

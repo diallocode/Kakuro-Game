@@ -16,6 +16,4 @@ private:
     int rows, cols;
 public:
     explicit Grille(int r, int c): rows(r), cols(c) {};
-    void loadFromFile(const std::string& filename); // pour charger la grille depuis le fichier
-
 };
