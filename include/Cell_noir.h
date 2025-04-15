@@ -1,5 +1,7 @@
-#include <iostream>
+#ifndef _CELL_NOIR
+#define _CELL_NOIR
 
+#include <iostream>
 #include "Cells.h"
 
 class Cell_noir : public Cells
@@ -8,4 +10,8 @@ class Cell_noir : public Cells
         /* Ne contient rien, vide */
     public:
         bool isEditable() override;
+        void afficher() override;
 };
+
+
+#endif

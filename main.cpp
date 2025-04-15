@@ -3,6 +3,11 @@
 #include <fstream>
 #include <sstream>
 #include "include/Grille.h"
+#include "include/Cells.h"
+#include "include/Cell_noir.h"
+#include "include/Cell_vide.h"
+#include "include/Cell_sum.h"
+
 
 int main(){
 

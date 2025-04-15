@@ -6,3 +6,7 @@ Cell_vide::Cell_vide(int v) : val(v) {};
 bool Cell_vide::isEditable() {
     return true;
 }
+
+void Cell_vide::afficher(){
+    std::cout << " " ;
+}

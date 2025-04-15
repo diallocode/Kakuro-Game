@@ -1,7 +1,6 @@
 // TextCellFactory.h
 #ifndef TEXTCELLFACTORY_H
 #define TEXTCELLFACTORY_H
-
 #include "IcellFactory.h"
 
 class TextCellFactory : public ICellFactory {

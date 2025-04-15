@@ -1,6 +1,9 @@
 // TextReader.h
 #ifndef TEXTREADER_H
 #define TEXTREADER_H
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 #include "Reader.h"
 

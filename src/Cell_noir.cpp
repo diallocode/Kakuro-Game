@@ -4,3 +4,7 @@
 bool Cell_noir::isEditable() {
     return false;
 }
+
+void Cell_noir::afficher(){
+    std::cout << "# " ;
+}

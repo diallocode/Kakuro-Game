@@ -1,3 +1,6 @@
+#ifndef _CELL_VIDE_
+#define _CELL_VIDE_
+
 #include <iostream>
 #include "Cells.h"
 
@@ -7,7 +10,10 @@ class Cell_vide : public Cells
         /* valeur correspondante */
         int val;
     public:
-        explicit Cell_vide(int v) : val(v) {};
+        explicit Cell_vide(int v);
 
         bool isEditable() override;
+        void afficher() override;
 };
+
+#endif
