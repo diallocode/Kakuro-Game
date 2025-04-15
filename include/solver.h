@@ -10,5 +10,5 @@ class Solver
     public:
 
     // Résout une grille en la modifiant directement
-    bool solution(Grille& g) const; 
+    virtual bool solution(Grille& g) = 0; 
 };
