@@ -4,7 +4,7 @@
 
 #include <string>
 #include "Reader.h"
-#include "ICellFactory.h"
+#include "IcellFactory.h"
 #include "Grille.h"
 
 class Factory {
