@@ -10,19 +10,27 @@
 #include "include/Factory.h"
 #include "include/TextReader.h"
 #include "include/TextCellFactory.h"
+#include "include/Game.h"
 
 
 
 
 int main(){
-    // Objet qui permet de lire un fichier texte et de fabriquer toutes les cellules nécessaires pour construire une grille
-    Factory* factory = new Factory(new TextReader(), new TextCellFactory());
+    Game jeu;
 
-    // Construction de la grille
-    Grille* grille = factory->buildGrid("Grille.txt");
+    // On creer la grille
+    jeu.chargerGrille("Grille.txt");
+    std::cout << "🧩 Grille initiale :\n";
 
-    // Affichage
-    grille->afficher();
+    // Affichage de la grille
+    jeu.afficherGrille();
+
+    std::cout << "🧩 Mode joueur activé !\n";
+    jeu.jouer();
+
+    // resolution avec le solver
+    std::cout << "\n🧠 Résolution en cours...\n";
+    jeu.resoudre();
 
     return 0;
 }

@@ -13,3 +13,11 @@ std::string Cell_vide::afficher(){
     else
         return "  " + std::to_string(val) + "  ";
 }
+
+int Cell_vide::getValue() const {
+    return val;
+}
+
+void Cell_vide::setValue(int value) {
+    val = value;
+}

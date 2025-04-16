@@ -2,7 +2,11 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include "solver.h"
+#include "Solver.h"
+#include "TextReader.h"
+#include "TextCellFactory.h"
+#include "Factory.h"
+#include "bruteForceSolver.h"
 
 // Game ne se préoccupe pas de comment la grille est construite, il se contente de l’utiliser.
 
@@ -10,13 +14,15 @@ class Game
 {
 private:
     /* attribut */
-    Grille grille; // Contient la grille
+    Grille* grille;
+    Solver* solver;
 public:
-    explicit Game(Grille g):grille(g) {};
+     Game();
+    ~Game();
 
-    bool isSolutionValide() const;
-    void affichage_grille() const;
-
-    // Methode permettant a un jouer de remplir la grille
-    void jouer() const;
+    void chargerGrille(const std::string& fichier);
+    void afficherGrille() const;
+    void jouer();
+    void resoudre();
+    
 };

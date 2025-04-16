@@ -14,6 +14,8 @@ class Cell_vide : public Cells
 
         bool isEditable() override;
         std::string afficher() override;
+        int getValue() const;
+        void setValue(int val);
 };
 
 #endif

@@ -15,3 +15,11 @@ std::string Cell_sum::afficher(){
     // Format : ↓16 ou →23 → aligné sur 4 ou 5 caractères
     return top + "/" + right;
 }
+
+int Cell_sum::getSumVerticale(){
+    return verticale;
+}
+
+int Cell_sum::getsumHorizontale(){
+    return horizontale;
+}

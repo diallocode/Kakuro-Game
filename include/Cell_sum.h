@@ -17,6 +17,8 @@ class Cell_sum : public Cells
 
         bool isEditable() override;
         std::string afficher() override;
+        int getsumHorizontale() ;
+        int getSumVerticale() ;
 };
 
 #endif

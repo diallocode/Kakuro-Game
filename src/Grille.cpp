@@ -41,3 +41,12 @@ Grille::~Grille() {
         }
     }
 }
+
+
+int Grille::getRows() const {
+    return rows;
+}
+
+int Grille::getCols() const {
+    return cols;
+}
