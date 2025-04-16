@@ -10,7 +10,7 @@ class Cell_noir : public Cells
         /* Ne contient rien, vide */
     public:
         bool isEditable() override;
-        void afficher() override;
+        std::string afficher() override;
 };
 
 

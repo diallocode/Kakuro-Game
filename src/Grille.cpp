@@ -23,14 +23,13 @@ void Grille::setCell(int i, int j, Cells* cell) {
 void Grille::afficher() const {
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
-            if (cells[i][j] == nullptr) {
-                std::cout << " ";
-            } else {
-                // Tu peux améliorer ça selon le type réel de la cellule
-              cells[i][j]->afficher(); // appel polymorphe
-            }
+            std::cout << "|";
+            if (cells[i][j])
+                std::cout << std::setw(8) << cells[i][j]->afficher();
+            else
+                std::cout << std::setw(8) << "#####";
         }
-        std::cout << std::endl;
+        std::cout << "|" << std::endl; // fin de ligne avec bordure droite
     }
 }
 

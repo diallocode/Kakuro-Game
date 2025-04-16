@@ -1,7 +1,11 @@
 // TextCellFactory.h
 #ifndef TEXTCELLFACTORY_H
 #define TEXTCELLFACTORY_H
-#include "IcellFactory.h"
+#include "ICellFactory.h"
+#include "TextCellFactory.h"
+#include "Cell_noir.h"
+#include "Cell_sum.h"
+#include "Cell_vide.h"
 
 class TextCellFactory : public ICellFactory {
 public:

@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <iomanip> // pour setw
 #include "Cells.h"
 
 class Grille {

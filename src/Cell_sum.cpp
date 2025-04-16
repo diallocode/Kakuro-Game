@@ -8,6 +8,10 @@ bool Cell_sum::isEditable() {
     return false; // Les cases de somme ne sont jamais éditables
 }
 
-void Cell_sum::afficher(){
-    std::cout << "\\" << horizontale << "/" << verticale << " " ;
+std::string Cell_sum::afficher(){
+    std::string top = (verticale >= 0) ? "↓" + std::to_string(verticale) : "   ";
+    std::string right = (horizontale >= 0) ? "→" + std::to_string(horizontale) : "   ";
+
+    // Format : ↓16 ou →23 → aligné sur 4 ou 5 caractères
+    return top + "/" + right;
 }

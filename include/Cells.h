@@ -15,7 +15,7 @@ class Cells
     public:
         // Verification si une cellule est modifiable
         virtual bool isEditable() = 0;
-        virtual void afficher() = 0;
+        virtual std::string afficher() = 0;
 };
 
 #endif

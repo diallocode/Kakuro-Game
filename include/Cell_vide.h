@@ -13,7 +13,7 @@ class Cell_vide : public Cells
         explicit Cell_vide(int v);
 
         bool isEditable() override;
-        void afficher() override;
+        std::string afficher() override;
 };
 
 #endif

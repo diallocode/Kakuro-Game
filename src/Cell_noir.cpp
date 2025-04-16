@@ -5,6 +5,6 @@ bool Cell_noir::isEditable() {
     return false;
 }
 
-void Cell_noir::afficher(){
-    std::cout << "# " ;
+std::string Cell_noir::afficher(){
+     return "    "; // Espace vide pour garder l'alignement
 }

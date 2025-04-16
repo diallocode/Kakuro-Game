@@ -2,7 +2,8 @@
 #define _CELL_SUM
 
 #include <iostream>
-
+#include <sstream>
+#include <iomanip>
 #include "Cells.h"
 
 class Cell_sum : public Cells
@@ -15,7 +16,7 @@ class Cell_sum : public Cells
         explicit Cell_sum(int h, int v);
 
         bool isEditable() override;
-        void afficher() override;
+        std::string afficher() override;
 };
 
 #endif

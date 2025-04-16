@@ -7,6 +7,9 @@ bool Cell_vide::isEditable() {
     return true;
 }
 
-void Cell_vide::afficher(){
-    std::cout << " " ;
+std::string Cell_vide::afficher(){
+   if (val == 0)
+        return "  .  ";
+    else
+        return "  " + std::to_string(val) + "  ";
 }
