@@ -21,15 +21,18 @@ void Grille::setCell(int i, int j, Cells* cell) {
 
 // Affichage simple : on montre des symboles pour voir le contenu
 void Grille::afficher() const {
+    std::string ligneSep = "+" + std::string(cols * 8, '-') + "+";
+    std::cout << ligneSep << "\n";
+
     for (int i = 0; i < rows; ++i) {
+        std::cout << "|";
         for (int j = 0; j < cols; ++j) {
-            std::cout << "|";
             if (cells[i][j])
-                std::cout << std::setw(8) << cells[i][j]->afficher();
+                std::cout << std::setw(7) << cells[i][j]->afficher() << "|";
             else
-                std::cout << std::setw(8) << "#####";
+                std::cout << std::setw(7) << "#######" << "|";
         }
-        std::cout << "|" << std::endl; // fin de ligne avec bordure droite
+        std::cout << "\n" << ligneSep << "\n";
     }
 }
 

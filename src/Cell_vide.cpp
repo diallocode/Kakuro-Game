@@ -8,10 +8,10 @@ bool Cell_vide::isEditable() {
 }
 
 std::string Cell_vide::afficher(){
-   if (val == 0)
-        return "  .  ";
+    if (val == 0)
+        return "   .   "; // 7 caractères
     else
-        return "  " + std::to_string(val) + "  ";
+        return "   " + std::to_string(val) + "   ";
 }
 
 int Cell_vide::getValue() const {

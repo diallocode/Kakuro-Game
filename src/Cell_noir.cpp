@@ -6,5 +6,5 @@ bool Cell_noir::isEditable() {
 }
 
 std::string Cell_noir::afficher(){
-     return "    "; // Espace vide pour garder l'alignement
+    return "\033[30;47m███████\033[0m";
 }

@@ -9,11 +9,12 @@ bool Cell_sum::isEditable() {
 }
 
 std::string Cell_sum::afficher(){
-    std::string top = (verticale >= 0) ? "↓" + std::to_string(verticale) : "   ";
-    std::string right = (horizontale >= 0) ? "→" + std::to_string(horizontale) : "   ";
-
-    // Format : ↓16 ou →23 → aligné sur 4 ou 5 caractères
-    return top + "/" + right;
+    std::string down = (verticale >= 0) ? "→" + std::to_string(verticale) : "  ";
+    std::string right = (horizontale >= 0) ? "↓" + std::to_string(horizontale) : "  ";
+    
+    std::stringstream ss;
+    ss << std::setw(2) << down << "/" << std::setw(3) << right;
+    return "\033[33m" + ss.str() + "\033[0m";  // Jaune ANSI
 }
 
 int Cell_sum::getSumVerticale(){
