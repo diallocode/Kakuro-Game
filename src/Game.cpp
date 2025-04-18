@@ -33,7 +33,7 @@ void Game::resoudre() {
         return;
     }
 
-    solver = new bruteForceSolver();
+    solver = new FilteredSolver();
 
     if (solver->solution(*grille)) {
         std::cout << "\n✅ Grille résolue :\n";

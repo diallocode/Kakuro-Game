@@ -39,9 +39,9 @@ bool isValid(Grille& g, int row, int col) {
 
     if (targetSum != -1) {
         if (emptyCount == 0 && currentSum != targetSum)
-            return false; // bloc complet mais mauvaise somme
-        if (emptyCount > 0 && currentSum >= targetSum)
-            return false; // partiel mais déjà trop grand
+            return false;
+        if (emptyCount > 0 && currentSum > targetSum) // ✅ modif ici
+            return false;
     }
 
     // ----- Vérification VERTICALE -----
@@ -83,12 +83,14 @@ bool isValid(Grille& g, int row, int col) {
     if (targetSum != -1) {
         if (emptyCount == 0 && currentSum != targetSum)
             return false;
-        if (emptyCount > 0 && currentSum >= targetSum)
+        if (emptyCount > 0 && currentSum > targetSum) // ✅ modif ici aussi
             return false;
     }
 
     return true;
 }
+
+
 
 bool bruteForceSolver::solution(Grille& g) {
     for (int i = 0; i < g.getRows(); ++i) {
@@ -100,18 +102,23 @@ bool bruteForceSolver::solution(Grille& g) {
                 for (int val = 1; val <= 9; ++val) {
                     empty->setValue(val);
 
-                    if (isValid(g, i, j)) { // tu peux activer ça après
-                        if (solution(g)) {
-                            return true;
-                        }
+                    if (isValid(g, i, j)) {
+                        if (solution(g)) return true;
                     }
 
                     empty->setValue(0); // backtrack
                 }
-                return false;
+                return false; // aucun chiffre ne convient
             }
         }
     }
 
-    return true; // tout est rempli
+    // ✅ Toutes les cellules sont remplies : vérifier que toute la grille est cohérente
+    for (int i = 0; i < g.getRows(); ++i) {
+        for (int j = 0; j < g.getCols(); ++j) {
+            if (!isValid(g, i, j)) return false;
+        }
+    }
+
+    return true; // tout est rempli ET valide globalement
 }

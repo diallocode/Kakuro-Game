@@ -10,12 +10,12 @@ class Cells
 {
     private:
         /* positions */
-        int x;
-        int y;
+
     public:
         // Verification si une cellule est modifiable
         virtual bool isEditable() = 0;
         virtual std::string afficher() = 0;
+        virtual ~Cells() = default;
 };
 
 #endif
