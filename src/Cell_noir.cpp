@@ -6,5 +6,5 @@ bool Cell_noir::isEditable() {
 }
 
 std::string Cell_noir::afficher(){
-    return "\033[30;47m███████\033[0m";
+    return "\033[30;47m       \033[0m"; // 7 caractères, visuellement homogène avec les autres
 }
