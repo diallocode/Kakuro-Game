@@ -1,3 +1,5 @@
-X       X       I-4/-    I-2/-
-X       I-4/3   U       U
-I-/7   U       U       X
+X       X       I25/-   I-2/-    X
+X       I-5/8   U-      U-      X
+I-/11  U-      U-      I-5/-    X
+I-/15  U-      U-      U-      X
+X       I-/3   U-      U-      X
