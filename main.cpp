@@ -19,7 +19,7 @@ int main(){
     Game jeu;
 
     // On creer la grille
-    jeu.chargerGrille("Grille.txt");
+    jeu.chargerGrille("Grille.bin");
     std::cout << "🧩 Grille initiale :\n";
 
     // Affichage de la grille

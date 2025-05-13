@@ -11,7 +11,21 @@ Game::~Game() {
 }
 
 void Game::chargerGrille(const std::string& fichier) {
-    Factory* factory = new Factory(new TextReader(), new TextCellFactory());
+    Reader* reader = nullptr;
+
+    // Détecter l'extension
+    if (fichier.size() >= 4 && fichier.substr(fichier.size() - 4) == ".bin") {
+        reader = new BinaryReader();
+        std::cout << "[INFO] Chargement fichier binaire.\n";
+    } else if (fichier.size() >= 4 && fichier.substr(fichier.size() - 4) == ".txt") {
+        reader = new TextReader();
+        std::cout << "[INFO] Chargement fichier texte.\n";
+    } else {
+        std::cerr << "Erreur : Format de fichier non reconnu.\n";
+        return;
+    }
+
+    Factory* factory = new Factory(reader, new TextCellFactory());
     grille = factory->buildGrid(fichier);
     delete factory;
 

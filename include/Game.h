@@ -8,6 +8,7 @@
 #include "Factory.h"
 #include "bruteForceSolver.h"
 #include "FilteredSolver.h"
+#include "BinaryReader.h"
 
 // Game ne se préoccupe pas de comment la grille est construite, il se contente de l’utiliser.
 
