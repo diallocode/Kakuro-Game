@@ -16,10 +16,10 @@ void Game::chargerGrille(const std::string& fichier) {
     // Détecter l'extension
     if (fichier.size() >= 4 && fichier.substr(fichier.size() - 4) == ".bin") {
         reader = new BinaryReader();
-        std::cout << "[INFO] Chargement fichier binaire.\n";
+        std::cout << "Chargement fichier binaire.\n";
     } else if (fichier.size() >= 4 && fichier.substr(fichier.size() - 4) == ".txt") {
         reader = new TextReader();
-        std::cout << "[INFO] Chargement fichier texte.\n";
+        std::cout << "Chargement fichier texte.\n";
     } else {
         std::cerr << "Erreur : Format de fichier non reconnu.\n";
         return;
