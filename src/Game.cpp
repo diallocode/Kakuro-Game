@@ -10,7 +10,6 @@ Game::~Game() {
 void Game::chargerGrille(const std::string& fichier) {
     Reader* reader = nullptr;
 
-    // Détecter l'extension
     if (fichier.size() >= 4 && fichier.substr(fichier.size() - 4) == ".bin") {
         reader = new BinaryReader();
         std::cout << "Chargement fichier binaire.\n";
@@ -28,6 +27,8 @@ void Game::chargerGrille(const std::string& fichier) {
 
     if (!grille) {
         std::cerr << "Erreur : Grille non chargée.\n";
+    } else {
+        std::cout << "Grille chargée avec succès.\n";
     }
 }
 

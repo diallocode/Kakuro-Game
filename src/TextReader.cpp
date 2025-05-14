@@ -7,7 +7,7 @@ std::vector<std::vector<std::string>> TextReader::readFile(const std::string& fi
 
     if (!file) {
         std::cerr << "Erreur : impossible d'ouvrir le fichier " << filename << std::endl;
-        return lines; // vide
+        return lines;
     }
 
     std::string line;
@@ -23,5 +23,6 @@ std::vector<std::vector<std::string>> TextReader::readFile(const std::string& fi
         lines.push_back(tokens);
     }
 
+    std::cout << "Fichier lu avec succès : " << lines.size() << " lignes.\n";
     return lines;
 }
