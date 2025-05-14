@@ -150,5 +150,35 @@ void Game::jouer() {
 
     std::cout << "\n✅ Partie terminée. Grille finale :\n";
     grille->afficher();
+
+    // Vérifier si la grille est complétée et valide après chaque coup
+    bool grilleComplete = true;
+    for (int i = 0; i < grille->getRows(); ++i) {
+        for (int j = 0; j < grille->getCols(); ++j) {
+            Cell_vide* cell = dynamic_cast<Cell_vide*>(grille->getCell(i, j));
+            if (cell) {
+                if (cell->getValue() == 0) {
+                    grilleComplete = false;
+                    break;
+                }
+            }
+        }
+        if (!grilleComplete) break;
+    }
+
+    // Si tout est rempli, vérifier la validité globale (avec ton solver)
+    if (grilleComplete) {
+        FilteredSolver verifSolver;
+        if (verifSolver.solution(*grille)) {
+            std::cout << "\n🎉 BRAVO ! Grille complétée et correcte !\n";
+            
+        } else {
+            std::cout << "\n❌ Solution incorrecte, retentez votre chance 😂😭\n";
+            std::cout << "\n";
+            std::cout << "\n🧠 Solution🥸😎\n";
+            resoudre();
+        }
+    }
+
 }
 
