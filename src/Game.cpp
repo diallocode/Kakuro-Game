@@ -9,19 +9,22 @@ Game::~Game() {
 
 void Game::chargerGrille(const std::string& fichier) {
     Reader* reader = nullptr;
+    ICellFactory* cellFactory = nullptr;
 
-    if (fichier.size() >= 4 && fichier.substr(fichier.size() - 4) == ".bin") {
-        reader = new BinaryReader();
-        std::cout << "Chargement fichier binaire.\n";
+    if (fichier.size() >= 5 && fichier.substr(fichier.size() - 5) == ".json") {
+        reader = new JsonReader();
+        cellFactory = new JsonCellFactory();
+        std::cout << "Chargement fichier Json.\n";
     } else if (fichier.size() >= 4 && fichier.substr(fichier.size() - 4) == ".txt") {
         reader = new TextReader();
+        cellFactory = new TextCellFactory();
         std::cout << "Chargement fichier texte.\n";
     } else {
         std::cerr << "Erreur : Format de fichier non reconnu.\n";
         return;
     }
 
-    Factory* factory = new Factory(reader, new TextCellFactory());
+    Factory* factory = new Factory(reader, cellFactory);
     grille = factory->buildGrid(fichier);
     delete factory;
 

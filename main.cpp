@@ -8,15 +8,31 @@ int main() {
     std::cout << "--------------------------------------\n";
 
     std::cout << "Choisissez le format de la grille :\n";
-    std::cout << "1. Fichier texte (Grille.txt)\n";
-    std::cout << "2. Fichier binaire (Grille.bin)\n";
+    std::cout << "1. Fichier texte (.txt)\n";
+    std::cout << "2. Fichier Json (.json)\n";
     std::cout << "Votre choix (1 ou 2) : ";
 
     int choix;
     std::cin >> choix;
     std::cin.ignore(); // pour consommer le retour chariot
 
-    std::string fichier = (choix == 2) ? "Grille.bin" : "Grille.txt";
+    std::string fichier;
+    if (choix == 1) {
+        fichier = "Grille.txt";
+        std::cout << "Vous avez sélectionnez le format text\n";
+    } else if (choix == 2) {
+        fichier = "kakuro.json";
+        std::cout << "Vous avez sélectionnez le format binaire\n";
+    } else {
+        std::cerr << "Foramt non disponible.\n";
+        return 1;
+    }
+
+    // Pause avec ENTER
+    std::cout << "\nAppuyez sur ENTREE pour charger la grille...\n";
+    std::cin.get();  // Attend que l'utilisateur appuie sur ENTER
+
+    // Chargement automatique
     jeu.chargerGrille(fichier);
 
     std::cout << "\nChoisissez la difficulté :\n";

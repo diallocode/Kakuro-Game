@@ -25,7 +25,7 @@ all: $(TARGET)
 # Création de l'exécutable
 $(TARGET): $(OBJ_FILES) $(MAIN_OBJ)
 	@mkdir -p $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
 
 # Compilation de main.cpp
 $(MAIN_OBJ): $(MAIN)
