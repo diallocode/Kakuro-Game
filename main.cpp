@@ -8,8 +8,8 @@ int main() {
     std::cout << "--------------------------------------\n";
 
     std::cout << "Choisissez le format de la grille :\n";
-    std::cout << "1. Fichier texte (Grille.txt)\n";
-    std::cout << "2. Fichier binaire (Grille.bin)\n";
+    std::cout << "1. Fichier texte (.txt)\n";
+    std::cout << "2. Fichier Json (.json)\n";
     std::cout << "Votre choix (1 ou 2) : ";
 
     int choix;
@@ -21,7 +21,7 @@ int main() {
         fichier = "Grille.txt";
         std::cout << "Vous avez sélectionnez le format text\n";
     } else if (choix == 2) {
-        fichier = "Grille.bin";
+        fichier = "kakuro.json";
         std::cout << "Vous avez sélectionnez le format binaire\n";
     } else {
         std::cerr << "Foramt non disponible.\n";

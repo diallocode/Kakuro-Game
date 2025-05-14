@@ -1,0 +1,38 @@
+{
+  "dimensions": {
+    "rows": 5,
+    "cols": 4
+  },
+  "grid": [
+    [
+      {"type": "black"},
+      {"type": "black"},
+      {"type": "sum", "down": 25, "right": 0},
+      {"type": "sum", "down": 2, "right": 0}
+    ],
+    [
+      {"type": "black"},
+      {"type": "sum", "down": 5, "right": 8},
+      {"type": "value", "value": 0},
+      {"type": "value", "value": 0}
+    ],
+    [
+      {"type": "sum", "down": 0, "right": 11},
+      {"type": "value", "value": 0},
+      {"type": "value", "value": 8},
+      {"type": "sum", "down": 5, "right": 0}
+    ],
+    [
+      {"type": "sum", "down": 0, "right": 15},
+      {"type": "value", "value": 2},
+      {"type": "value", "value": 0},
+      {"type": "value", "value": 0}
+    ],
+    [
+      {"type": "black"},
+      {"type": "sum", "down": 0, "right": 3},
+      {"type": "value", "value": 0},
+      {"type": "value", "value": 0}
+    ]
+  ]
+}

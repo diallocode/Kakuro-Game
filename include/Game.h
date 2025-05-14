@@ -8,7 +8,8 @@
 #include "Factory.h"
 #include "bruteForceSolver.h"
 #include "FilteredSolver.h"
-#include "BinaryReader.h"
+#include "JsonReader.h"
+#include "JsonCellFactory.h"
 #include <limits> // pour std::numeric_limits
 #include <iostream>
 
