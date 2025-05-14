@@ -14,7 +14,7 @@ int main() {
 
     int choix;
     std::cin >> choix;
-    std::cin.ignore();  // Pour vider le buffer et éviter que le ENTER saute la pause
+    std::cin.ignore(); // pour consommer le retour chariot
 
     std::string fichier;
     if (choix == 1) {
@@ -35,18 +35,26 @@ int main() {
     // Chargement automatique
     jeu.chargerGrille(fichier);
 
-    std::cout << "🧩 Grille initiale :\n";
+    std::cout << "\nChoisissez la difficulté :\n";
+    std::cout << "1. Facile (temps illimité)\n";
+    std::cout << "2. Moyen (3 minutes)\n";
+    std::cout << "3. Difficile (2 minutes + 10 tentatives max)\n";
+    std::cout << "Votre choix : ";
+
+    int difficulte;
+    std::cin >> difficulte;
+
+    // Définir la difficulté directement dans Game
+    jeu.setDifficulte(difficulte);
+
+    std::cout << "\n🧩 Grille initiale :\n";
     jeu.afficherGrille();
 
-    std::cout << "\nAppuyez sur ENTREE pour commencer...\n";
-    std::cin.get();  // Attend que l'utilisateur appuie sur ENTER
-
-    std::cout << "🧩 Mode joueur activé !\n";
     jeu.jouer();
 
-    std::cout << "\n🧠 Résolution en cours...\n";
+    std::cout << "\n🧠 Résolution automatique...\n";
     jeu.resoudre();
 
-    std::cout << "Merci d'avoir utilisé Kakuro Solver ! 👋\n";
+    std::cout << "Merci d'avoir joué à Kakuro Solver ! 👋\n";
     return 0;
 }

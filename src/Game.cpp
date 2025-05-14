@@ -58,6 +58,12 @@ void Game::resoudre() {
     }
 }
 
+int difficulte = 1; // Par défaut Facile
+
+void Game::setDifficulte(int diff) {
+    difficulte = diff;
+}
+
 
 
 void Game::jouer() {
@@ -66,12 +72,47 @@ void Game::jouer() {
         return;
     }
 
+    int tempsLimite = 0;
+    int tentativesRestantes = -1;
+
+    if (difficulte == 1) { // Facile
+        tempsLimite = -1; // illimité
+    } else if (difficulte == 2) { // Moyen
+        tempsLimite = 180;
+    } else if (difficulte == 3) { // Difficile
+        tempsLimite = 120;
+        tentativesRestantes = 10;
+    }
+
+    auto debut = std::chrono::steady_clock::now();
+    std::cout << "\n🧩 Mode défi activé !\n";
+
     while (true) {
-        std::cout << "\n📋 Grille actuelle :\n";
+        // Vérifier temps si pas illimité
+        if (tempsLimite > 0) {
+            auto maintenant = std::chrono::steady_clock::now();
+            auto duree = std::chrono::duration_cast<std::chrono::seconds>(maintenant - debut).count();
+
+            if (duree >= tempsLimite) {
+                std::cout << "\n💀 Temps écoulé ! Game Over.\n";
+                break;
+            }
+
+            int tempsRestant = tempsLimite - duree;
+            std::cout << "\n⏱️ Temps restant : " << (tempsRestant / 60) << " min " << (tempsRestant % 60) << " s\n";
+        } else {
+            auto maintenant = std::chrono::steady_clock::now();
+            auto duree = std::chrono::duration_cast<std::chrono::seconds>(maintenant - debut).count();
+            std::cout << "\n⏱️ Temps écoulé : " << (duree / 60) << " min " << (duree % 60) << " s\n";
+        }
+
+        if (tentativesRestantes > 0) {
+            std::cout << "💥 Tentatives restantes : " << tentativesRestantes << "\n";
+        }
+
         grille->afficher();
 
         int row, col, val;
-
         std::cout << "\nEntrez ligne (-1 pour quitter) : ";
         std::cin >> row;
         if (row == -1) break;
@@ -82,7 +123,6 @@ void Game::jouer() {
         std::cout << "Entrez valeur (1-9, 0 pour effacer) : ";
         std::cin >> val;
 
-        // Sécuriser les entrées
         if (std::cin.fail() || val < 0 || val > 9) {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -98,8 +138,17 @@ void Game::jouer() {
         }
 
         cell->setValue(val);
+
+        if (tentativesRestantes > 0) {
+            tentativesRestantes--;
+            if (tentativesRestantes == 0) {
+                std::cout << "\n💀 Nombre de tentatives épuisé ! Game Over.\n";
+                break;
+            }
+        }
     }
 
     std::cout << "\n✅ Partie terminée. Grille finale :\n";
     grille->afficher();
 }
+

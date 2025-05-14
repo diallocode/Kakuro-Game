@@ -12,6 +12,7 @@
 #include "JsonCellFactory.h"
 #include <limits> // pour std::numeric_limits
 #include <iostream>
+#include <chrono>
 
 
 // Game ne se préoccupe pas de comment la grille est construite, il se contente de l’utiliser.
@@ -30,5 +31,5 @@ public:
     void afficherGrille() const;
     void jouer();
     void resoudre();
-    
+    void setDifficulte(int diff);
 };
