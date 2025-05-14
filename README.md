@@ -1,12 +1,39 @@
-# 🧩 Kakuro - Jeu et Solveur en C++
-
-Ce projet implémente un jeu de Kakuro jouable en terminal, avec :
-- Chargement de grilles depuis fichier texte
-- Solveur automatique (brute force)
-- Interface interactive pour le joueur
-- Architecture modulaire et orientée objet
+# Kakuro Solver - Projet C++
 
 ---
 
-## 🔧 Structure du projet
-kakuro/ ├── include/ # Fichiers .h (headers) ├── src/ # Fichiers .cpp ├── obj/ # Objets compilés ├── bin/ # Exécutable ├── Grille.txt # Fichier exemple de grille ├── main.cpp # Point d'entrée du programme ├── Makefile # Compilation └── README.md # Ce fichier
+## Compilation
+Pour compiler le projet avec la commande suivante :
+
+make
+
+---
+
+## Exécution
+Pour exécuter le programme, entrer la commande suivante :
+
+./bin/kakuro
+
+---
+
+## Utilisation
+
+1. Au lancement :
+   - Choisissez le format (1 : texte / 2 : json).
+   - Le programme charge automatiquement `Grille.txt` ou `Grille.json`.
+
+2. Choix de difficulté :
+   - Facile : temps illimité.
+   - Moyen : 3 minutes.
+   - Difficile : 2 minutes + 10 tentatives maximum.
+
+3. Mode joueur :
+   - Entrez les coordonnées (ligne, colonne) et la valeur (1-9, 0 pour effacer).
+   - Quittez en entrant -1 à la ligne.
+
+4. Résolution automatique :
+   - Le solver propose la solution après le mode joueur ou directement.
+
+
+
+

@@ -52,8 +52,7 @@ int main() {
 
     jeu.jouer();
 
-    std::cout << "\n🧠 Résolution automatique...\n";
-    jeu.resoudre();
+   
 
     std::cout << "Merci d'avoir joué à Kakuro Solver ! 👋\n";
     return 0;
