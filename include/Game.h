@@ -9,6 +9,9 @@
 #include "bruteForceSolver.h"
 #include "FilteredSolver.h"
 #include "BinaryReader.h"
+#include <limits> // pour std::numeric_limits
+#include <iostream>
+
 
 // Game ne se préoccupe pas de comment la grille est construite, il se contente de l’utiliser.
 

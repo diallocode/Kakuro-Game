@@ -1,8 +1,5 @@
 #include "../include/Game.h"
 
-
-#include <iostream>
-
 Game::Game() : grille(nullptr), solver(nullptr) {}
 
 Game::~Game() {
@@ -57,7 +54,7 @@ void Game::resoudre() {
     }
 }
 
-#include <limits> // pour std::numeric_limits
+
 
 void Game::jouer() {
     if (!grille) {
