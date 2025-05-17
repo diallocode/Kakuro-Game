@@ -1,5 +1,8 @@
 # Kakuro Solver - Projet C++
 
+![Aperçu de l'application](illustration.jpeg)
+
+
 
 ## Compilation
 Pour compiler le projet, utilisez la commande suivante dans le terminal à la racine du projet :
