@@ -5,7 +5,7 @@
 Pour compiler le projet, utilisez la commande suivante dans le terminal à la racine du projet :
 
 
-make
+`make`
 
 
 ---
@@ -13,7 +13,7 @@ make
 ## Exécution
 Pour exécuter le programme, entrer la commande suivante :
 
-./bin/kakuro
+`./bin/kakuro`
 
 ---
 
