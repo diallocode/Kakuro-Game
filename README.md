@@ -2,9 +2,14 @@
 
 ---
 
-## Compilation
-Pour compiler le projet avec la commande suivante :
+# Kakuro Solver - Projet C++
 
+---
+
+## Compilation
+Pour compiler le projet, utilisez la commande suivante dans le terminal à la racine du projet :
+
+```bash
 make
 
 ---
@@ -12,6 +17,7 @@ make
 ## Exécution
 Pour exécuter le programme, entrer la commande suivante :
 
+```bash
 ./bin/kakuro
 
 ---
@@ -32,7 +38,8 @@ Pour exécuter le programme, entrer la commande suivante :
    - Quittez en entrant -1 à la ligne.
 
 4. Résolution automatique :
-   - Le solver propose la solution après le mode joueur ou directement.
+   - Une fois le mode joueur terminé (ou si la grille est incorrecte), le programme propose une solution correcte calculée automatiquement.
+   - Cela permet de comparer avec votre propre solution.
 
 
 
