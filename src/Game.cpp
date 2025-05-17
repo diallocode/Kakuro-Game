@@ -174,8 +174,6 @@ void Game::jouer() {
         } else {
             std::cout << "\n❌ Solution incorrecte, retentez votre chance 😂😭\n";
             std::cout << "\n";
-            std::cout << "\n🧠 Solution🥸😎\n";
-            resoudre();
         }
     }
     
