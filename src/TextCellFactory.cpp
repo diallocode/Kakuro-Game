@@ -11,8 +11,8 @@ Cells* TextCellFactory::createCell(const std::string& token) {
         int sumDown = -1, sumRight = -1;
 
         size_t slashPos = token.find('/');
-        std::string downStr = token.substr(0, slashPos);
-        std::string rightStr = token.substr(slashPos + 1);
+        std::string downStr  = token.substr(0, slashPos);   // ↓
+        std::string rightStr = token.substr(slashPos + 1);  // →
 
         if (!downStr.empty()) {
             try {
@@ -27,6 +27,12 @@ Cells* TextCellFactory::createCell(const std::string& token) {
         }
 
         return new Cell_sum(sumRight, sumDown); // toujours right, down
+    }
+
+    else if (std::all_of(token.begin(), token.end(), ::isdigit)) {
+        // Nombre entier détecté → valeur fixe
+        int val = std::stoi(token);
+        return new Cell_vide(val);
     }
 
     // Par défaut : cellule noire si on ne comprend pas

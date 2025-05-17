@@ -35,7 +35,7 @@ int main() {
     // Chargement automatique
     jeu.chargerGrille(fichier);
 
-    std::cout << "\nChoisissez la difficulté :\n";
+    std::cout << "\nChoisissez le mode :\n";
     std::cout << "1. Facile (temps illimité)\n";
     std::cout << "2. Moyen (3 minutes)\n";
     std::cout << "3. Difficile (2 minutes + 10 tentatives max)\n";
@@ -52,8 +52,6 @@ int main() {
 
     jeu.jouer();
 
-   
-
-    std::cout << "Merci d'avoir joué à Kakuro Solver ! 👋\n";
+    std::cout << "\nMerci d'avoir joué à Kakuro ! 👋\n";
     return 0;
 }

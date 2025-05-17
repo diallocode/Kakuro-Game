@@ -148,8 +148,7 @@ void Game::jouer() {
         }
     }
 
-    std::cout << "\n✅ Partie terminée. Grille finale :\n";
-    grille->afficher();
+    
 
     // Vérifier si la grille est complétée et valide après chaque coup
     bool grilleComplete = true;
@@ -179,6 +178,11 @@ void Game::jouer() {
             resoudre();
         }
     }
+    
+    // Affichage final obligatoire de la solution à la fin du mode joueur
+    std::cout << "\n🧠 Solution proposée par le solver :\n";
+    resoudre();
+
 
 }
 
