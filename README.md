@@ -4,15 +4,15 @@
 ## Compilation
 Pour compiler le projet, utilisez la commande suivante dans le terminal à la racine du projet :
 
-```bash
+
 make
+
 
 ---
 
 ## Exécution
 Pour exécuter le programme, entrer la commande suivante :
 
-```bash
 ./bin/kakuro
 
 ---
