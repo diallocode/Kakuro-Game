@@ -18,7 +18,7 @@ int main() {
 
     std::string fichier;
     if (choix == 1) {
-        fichier = "Grille.txt";
+        fichier = "12_10_facile.txt";
         std::cout << "Vous avez sélectionnez le format text\n";
     } else if (choix == 2) {
         fichier = "kakuro.json";
