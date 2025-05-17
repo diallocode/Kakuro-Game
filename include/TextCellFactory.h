@@ -6,6 +6,7 @@
 #include "Cell_noir.h"
 #include "Cell_sum.h"
 #include "Cell_vide.h"
+#include <algorithm>
 
 class TextCellFactory : public ICellFactory {
 public:
